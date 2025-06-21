@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" href="./assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" href="./assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" href="./assets/Lora-VariableFont_wght-B2ootaw-.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Regular-CxL0S8W7.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Bold-D9fedIX3.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Regular-BTCkDNvf.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Medium-DU3aDxX5.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Bold-CLVRCuM9.ttf" as="font" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        var scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          var element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          var hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          var newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((entries) => {
+          setHeight();
+        });
+        resizeObserver.observe(obj.contentWindow.document.body);
+      }
+    </script>
+    <marimo-filename hidden>notebook.py</marimo-filename>
+    <title>notebook</title>
+    <script type="module" crossorigin src="./assets/index-g8LxgBK2.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BVt8Dtzn.css">
+  <marimo-wasm hidden=""></marimo-wasm>
+    <script>
+        if (window.location.protocol === 'file:') {
+            alert('Warning: This file must be served by an HTTP server to function correctly.');
+        }
+    </script>
+    
+    <style>
+        #save-button {
+            display: none !important;
+        }
+        #filename-input {
+            display: none !important;
+        }
+    </style>
+    <marimo-code hidden="">import%20marimo%0A%0A__generated_with%20%3D%20%220.14.5%22%0Aapp%20%3D%20marimo.App(width%3D%22medium%22)%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22%23%20Welcome%20to%20marimo%20%F0%9F%91%8B%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20rf%22%22%22%0A%20%20%20%20%3E%20This%20notebook%20originated%20from%20%5B%40marimo%2Fonboarding%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Fonboarding).%0A%20%20%20%20%3E%20%0A%20%20%20%20%3E%20You're%20welcome%20to%20fork%20it%20again%20or%20check%20out%20the%20latest%20updates!%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(rf%22%22%22----%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%23%23%20What%20is%20marimo%3F%0A%0A%20%20%20%20marimo%20is%20an%20%5Bopen-source%5D(https%3A%2F%2Fgithub.com%2Fmarimo-team%2Fmarimo)%20reactive%20notebook%20for%20Python%20that%20makes%20experiments%20reproducible%2C%20brings%20data%20to%20life%20with%20UI%20elements%2C%20and%20makes%20it%20seamless%20to%20go%20from%20prototype%20to%20production%20as%20a%20pipeline%20or%20app.%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20f%22%22%22%0A%20%20%20%20If%20you're%20new%20to%20marimo%2C%20be%20sure%20to%20check%20out%20our%20%5Bdocs%5D(https%3A%2F%2Fdocs.marimo.io)%20and%20tutorials%3A%0A%0A%20%20%20%201.%20%5BIntro%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-intro)%0A%20%20%20%202.%20%5BDataflow%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-dataflow)%0A%20%20%20%203.%20%5BUI%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-ui)%0A%20%20%20%204.%20%5BMarkdown%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-markdown)%0A%20%20%20%205.%20%5BPlots%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-plots)%0A%20%20%20%206.%20%5BSQL%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-sql)%0A%20%20%20%207.%20%5BLayout%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-layout)%0A%20%20%20%208.%20%5BFile%20Format%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-file-format)%0A%20%20%20%209.%20%5BFor%20Jupyter%20Users%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Ftutorial-for-jupyter-users)%0A%0A%20%20%20%20%7Bmo.md(%0A%20%20%20%20%20%20%20%20%22If%20you%20want%20to%20play%20around%20with%20any%20of%20these%2C%20you%20can%20fork%20them%20directly%20into%20your%20Workspace.%22%0A%20%20%20%20).callout()%7D%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%23%23%20Notebooks%20on%20marimo.io%20run%20entirely%20in%20the%20browser%0A%0A%20%20%20%20%5Bmarimo.io%5D(http%3A%2F%2Fmarimo.io)%20is%20place%20to%20create%20private%20or%20public%20notebooks%20that%20run%20entirely%20in%20the%20browser%20%E2%80%94%20no%20backend%20required.%20These%20notebooks%20can%20be%20shared%20with%20your%20colleagues%20privately%20via%20shared%20workspaces%20%E2%80%94%20or%20publicly%20as%20shareable%20links%20and%20embedded%20in%20your%20blog.%0A%0A%0A%20%20%20%20marimo%20notebooks%20that%20run%20entirely%20in%20the%20browser%20are%20called%20**WebAssembly%20notebooks**%2C%20or%20**WASM%20notebooks**%20for%20short.%20*(This%20notebook%20is%20a%20WASM%20notebook.)*%0A%0A%20%20%20%20WASM%20notebooks%20are%20excellent%20for%20sharing%20your%20work%2C%20quickly%20experimenting%20with%20code%20and%20models%2C%20doing%20lightweight%20data%20exploration%2C%20authoring%20blog%20posts%2C%20tutorials%2C%20and%20educational%20materials%2C%20and%20even%20building%20tools.%20They%20are%20not%20well-suited%20for%20notebooks%20that%20do%20heavy%20computation.%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22For%20more%20info%2C%20see%20our%20%5Bdocs%20on%20WASM%20Notebooks%5D(https%3A%2F%2Fdocs.marimo.io%2Fguides%2Fwasm.html).%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20rf%22%22%22%0A%20%20%20%20%23%23%23%20Limitations%0A%0A%20%20%20%20**Packages.**%20Not%20all%20packages%20are%20available%20in%20WASM%20notebooks%3B%20packages%20must%20be%20built%20in%20Pyodide%20or%20have%20a%20pure%20Python%20wheel.%0A%0A%20%20%20%20**Threading%20and%20multi-processing.**%20WASM%20notebooks%20do%20not%20support%20multithreading%0A%20%20%20%20and%20multiprocessing.%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20rf%22%22%22%0A%20%20%20%20%23%23%23%20Adding%20libraries%0A%0A%20%20%20%20Many%20common%20libraries%20such%20as%20%60numpy%60%20or%20%60pandas%60%20will%20be%20automatically%20installed%20for%20you%20as%20long%20as%20you%20import%20it.%20For%20other%20libraries%2C%20you%20can%20install%20them%20manually%20using%20%60micropip%60%3A%0A%0A%20%20%20%20%60%60%60python%0A%20%20%20%20import%20micropip%0A%0A%20%20%20%20%23%20pass%20the%20PyPi%20package%20name%0A%20%20%20%20await%20micropip.install(%22plotly%22)%0A%20%20%20%20import%20plotly%0A%0A%20%20%20%20%23%20or%20you%20can%20install%20from%20a%20wheel%20URL%0A%20%20%20%20await%20micropip.install(%0A%20%20%20%20%20%20%20%20%22https%3A%2F%2Fexample.com%2Ffiles%2Fsnowballstemmer-2.0.0-py2.py3-none-any.whl%22%0A%20%20%20%20)%0A%20%20%20%20%60%60%60%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20f%22%22%22%0A%20%20%20%20%23%23%20Sharing%20your%20notebooks%0A%0A%20%20%20%20To%20share%20your%20notebooks%20**publicly**%3A%0A%0A%20%20%20%201.%20In%20the%20left-hand%20sidebar%2C%20open%20the%20Share%20Button%0A%0A%20%20%20%20%7Bmo.image(%22.%2Fshare.png%22%2C%20rounded%3DTrue%2C%20height%3D250).center()%7D%0A%0A%20%20%20%202.%20Click%20**Publish**%0A%20%20%20%203.%20This%20creates%20a%20shareable%20link%20at%20%5Bhttps%3A%2F%2Fmarimo.io%2Fp%2F%40org%2Fproject-slug%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Fonboarding)%0A%20%20%20%204.%20Want%20to%20embed%20it%20in%20a%20blog%3F%20Add%20%5B%60%3Fembed%3Dtrue%60%5D(https%3A%2F%2Fmarimo.io%2Fp%2F%40marimo%2Fonboarding%3Fembed%3Dtrue)%0A%0A%0A%20%20%20%20To%20share%20your%20notebooks%20**privately**%3A%0A%0A%20%20%20%201.%20In%20the%20same%20Share%20Dialog%20from%20above%2C%20you%20can%20invite%20collaborators%20**by%20email**.%0A%20%20%20%202.%20You%20can%20also%20add%20collaborators%20to%20your%20workspace%20which%20shares%20_all_%20notebooks%20with%20them.%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20rf%22%22%22%0A%20%20%20%20%23%23%20Excluding%20code%0A%0A%20%20%20%20By%20default%2C%20WASM%20notebooks%20expose%20your%20Python%20code%20to%20viewers.%20This%20is%20because%20all%20the%20Python%20code%20runs%20safely%20on%20the%20client's%20browser.%20If%20you%E2%80%99ve%20enabled%20read-only%20mode%2C%20you%20can%20exclude%20code%20with%20%60%26include-code%3Dfalse%60.%20%0A%0A%20%20%20%20A%20sufficiently%20determined%20user%20would%20still%20be%20able%20to%20obtain%20your%20code%2C%20so%20don%E2%80%99t%20think%20of%20this%20as%20a%20security%20feature%3B%20instead%2C%20think%20of%20it%20as%20an%20aesthetic%20or%20practical%20choice.%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20f%22%22%22%0A%20%20%20%20%23%23%20Customize%20your%20settings%0A%0A%20%20%20%20You%20can%20customize%20your%20settings%20in%20the%20top%20right%20of%20the%20editor%2C%20you%20can%3A%0A%0A%20%20%20%20-%20Choose%20your%20keyboard%20(%7Bmo.image(%22https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9f%2FVimlogo.svg%2F1022px-Vimlogo.svg.png%22%2C%20height%3D16%2C%20style%3D%7B%22display%22%3A%20%22inline%22%7D)%7D%20VIM%20keybindings)%0A%20%20%20%20-%20Dark%2Flight%20theme%0A%20%20%20%20-%20Configure%20outputs%20above%20or%20below%20the%20code%0A%20%20%20%20-%20Reactivity%20model%20(auto-run%20or%20lazy)%0A%20%20%20%20-%20Auto-formatting%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20rf%22%22%22%0A%20%20%20%20%23%23%20Data%0A%0A%20%20%20%20You%20can%20bring%20in%20data%20through%20a%20variety%20of%20ways%3A%0A%0A%20%20%20%201.%20You%20can%20bring%20in%20local%20data%20to%20your%20project%20through%20the%20**file%20explorer**%20via%20drag-n-drop.%0A%20%20%20%202.%20You%20can%20create%20data%20in%20this%20notebook%20and%20save%20it%20to%20the%20file%20system.%0A%20%20%20%203.%20You%20can%20create%20a%20virtual%20mount%20to%20an%20S3%20or%20S3-compatible%20bucket.%0A%20%20%20%204.%20You%20can%20request%20data%20remotely%20using%20the%20packages%20%60urllib3%60%20and%20%60requests%60%2C%20or%20you%20can%20use%20%60pandas.read_csv()%60%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%23%23%23%20Mounting%20datasets%0A%0A%20%20%20%20You%20can%20mount%20S3%20or%20S3-compatible%20buckets%20for%20a%20given%20project.%0A%0A%20%20%20%20We%20have%20more%20integrations%20coming%20soon.%20If%20you%20are%20looking%20for%20a%20particular%20integration%2C%20%5Bplease%20reach%20out%5D(mailto%3Acontact%40marimo.io%3Fsubject%3DRequest%2520an%2520integration).%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(DATASET_DIR%2C%20dropdown%2C%20mo)%3A%0A%20%20%20%20import%20pandas%0A%0A%20%20%20%20mo.stop(not%20dropdown.value)%0A%20%20%20%20filepath%20%3D%20DATASET_DIR%20%2B%20%22%2F%22%20%2B%20dropdown.value%0A%20%20%20%20mo.ui.table(pandas.read_csv(filepath))%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22This%20notebook%20uses%20a%20local%20sample%20dataset%20in%20your%20Downloads%20folder%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20import%20os%0A%20%20%20%20import%20pandas%20as%20pd%0A%20%20%20%20import%20pathlib%0A%0A%20%20%20%20%23%20Create%20a%20local%20sample_data%20directory%0A%20%20%20%20DATASET_DIR%20%3D%20os.path.join(os.path.dirname(os.path.abspath(__file__))%2C%20%22sample_data%22)%0A%20%20%20%20os.makedirs(DATASET_DIR%2C%20exist_ok%3DTrue)%0A%0A%20%20%20%20%23%20Create%20sample%20CSV%20files%20if%20they%20don't%20exist%0A%20%20%20%20sample_files%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%22sample1.csv%22%3A%20pd.DataFrame(%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22Name%22%3A%20%5B%22Alice%22%2C%20%22Bob%22%2C%20%22Charlie%22%2C%20%22David%22%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22Age%22%3A%20%5B25%2C%2030%2C%2035%2C%2040%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22City%22%3A%20%5B%22New%20York%22%2C%20%22San%20Francisco%22%2C%20%22Chicago%22%2C%20%22Boston%22%5D%0A%20%20%20%20%20%20%20%20%7D)%2C%0A%20%20%20%20%20%20%20%20%22sample2.csv%22%3A%20pd.DataFrame(%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22Product%22%3A%20%5B%22Laptop%22%2C%20%22Phone%22%2C%20%22Tablet%22%2C%20%22Monitor%22%2C%20%22Keyboard%22%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22Price%22%3A%20%5B1200%2C%20800%2C%20500%2C%20300%2C%20100%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22Stock%22%3A%20%5B10%2C%2020%2C%2015%2C%205%2C%2030%5D%0A%20%20%20%20%20%20%20%20%7D)%2C%0A%20%20%20%20%20%20%20%20%22sample3.csv%22%3A%20pd.DataFrame(%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22Date%22%3A%20pd.date_range(start%3D%222023-01-01%22%2C%20periods%3D5)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22Value%22%3A%20%5B100%2C%20150%2C%20120%2C%20200%2C%20180%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22Category%22%3A%20%5B%22A%22%2C%20%22B%22%2C%20%22A%22%2C%20%22C%22%2C%20%22B%22%5D%0A%20%20%20%20%20%20%20%20%7D)%0A%20%20%20%20%7D%0A%0A%20%20%20%20for%20filename%2C%20df%20in%20sample_files.items()%3A%0A%20%20%20%20%20%20%20%20filepath%20%3D%20os.path.join(DATASET_DIR%2C%20filename)%0A%20%20%20%20%20%20%20%20if%20not%20os.path.exists(filepath)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20df.to_csv(filepath%2C%20index%3DFalse)%0A%0A%20%20%20%20datasets%20%3D%20%5Bf%20for%20f%20in%20os.listdir(DATASET_DIR)%20if%20f.endswith(%22.csv%22)%5D%0A%20%20%20%20mo.md(f%22Found%20**%7Blen(datasets)%7D**%20in%20%7BDATASET_DIR%7D%22)%0A%20%20%20%20return%20DATASET_DIR%2C%20datasets%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(datasets%2C%20mo)%3A%0A%20%20%20%20dropdown%20%3D%20mo.ui.dropdown(datasets%2C%20label%3D%22Select%20a%20dataset%22)%0A%20%20%20%20dropdown%0A%20%20%20%20return%20(dropdown%2C)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20marimo%20as%20mo%0A%20%20%20%20return%20(mo%2C)%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A</marimo-code></head>
+  <body>
+    <div id="root"></div>
+    <script data-marimo="true">
+      window.__MARIMO_MOUNT_CONFIG__ = {
+            "filename": "notebook.py",
+            "mode": "read",
+            "version": "0.14.5",
+            "serverToken": "unused",
+            "config": {"completion": {"activate_on_typing": true, "copilot": false}, "display": {"cell_output": "above", "code_editor_font_size": 14, "dataframes": "rich", "default_table_page_size": 10, "default_width": "medium", "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": true}}, "package_management": {"manager": "pip"}, "runtime": {"auto_instantiate": true, "auto_reload": "off", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "off", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"sql_output": "auto", "width": "medium"},
+            "view": {"showAppCode": false},
+            "notebook": null,
+            "session": null,
+            "runtimeConfig": null,
+        };
+    </script>
+  </body>
+</html>

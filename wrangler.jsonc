@@ -1,0 +1,13 @@
+{
+  "name": "notebook",
+  "main": "index.js",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./notebooks-site",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    "notebooks.rxhulshxr.mx/*",
+    "notebooks.rxhulshxr.mx"
+  ]
+}
